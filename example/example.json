@@ -1,0 +1,60 @@
+{
+	"player": 6,
+	"time": 2,
+	"timeUnit": "hour",
+	"result": {
+		"openEnded": false,
+		"murder": "min"
+	},
+	"scene": {
+		{
+			"id": 111,
+			"name": "masterRoom",
+			"facts" [],
+			"visitors": [
+				{
+					"name": "jim",
+					"visitTimes": 2
+				}
+			]
+		}
+	},
+	"players": [
+		{
+			"id": 10000,
+			"name": "min",
+			"nameMapper": "jim",
+			"alive": true,
+			"description": "default description",
+			"relation": [],
+			"publicFacts": ["k's brother, ..."].
+			"privateFacts": [],
+			"power": [],
+			"clue": [12345]
+		}
+	],
+	"npcs": [
+		{
+			"id": 11111,
+			"name": "k",
+			"alive": false,
+			"description": "murdered at time xx:xx",
+			"publicFacts": [],
+			"relation": [],
+			"privateFacts": [
+				{
+					"id": 12345,
+					"description": "dead around 7:00",
+					"accessControl": ["min"]
+				},
+				{
+					"id": 12346,
+					"description": "dead beside parking lot",
+					"accessControl": []
+				}
+			]
+		}
+	]
+}
+
+
