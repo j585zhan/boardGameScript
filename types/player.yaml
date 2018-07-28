@@ -1,0 +1,24 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Player
+    description: player
+    type: object
+    extend:
+        "$ref": Role.yaml
+    properties:
+        nameMapper:
+            nameMapper: map a name in script to name of actual player
+            type: string
+        powers:
+            powers: the available operation of current player
+            type: array
+            items:
+                type:
+                    "$ref": Power.yaml
+        clues:
+            clues: the clues of current player collected
+            type: array
+            items:
+                type: integer
+    required:
+        - powers
+        - clues

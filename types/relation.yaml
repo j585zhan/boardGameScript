@@ -1,0 +1,18 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Relation
+    description: relation
+    type: object
+    properties:
+        id:
+            description: id of a relation
+            type: integer
+        target:
+            description: target person of this relation
+            type: integer
+        description:
+            description: description of this relation
+            type: string
+    required:
+        - id
+        - target
+        - description

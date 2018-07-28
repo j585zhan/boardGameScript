@@ -1,0 +1,39 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Role
+    description: role
+    type: object
+    properties:
+        id:
+            description: id of a person
+            type: integer
+        name:
+            description: name of a person
+            type: string
+        description:
+            description: description of a person
+            type: string
+        alive:
+            description: if a person still alive
+            type: boolean
+        relation:
+            description: relation with other people
+            type: array
+            items:
+                "$ref": relation.yaml
+        publicFacts:
+            description: publicFacts of a person
+            type: array
+            items:
+                "$ref": fact.yaml
+        privateFacts:
+            description: privateFacts of a person
+            type: array
+            items:
+                "$ref": fact.yaml
+    required:
+        - id
+        - name
+        - alive
+        - relation
+        - publicFacts
+        - privateFacts

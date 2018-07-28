@@ -10,7 +10,7 @@
 		{
 			"id": 111,
 			"name": "masterRoom",
-			"facts" [],
+			"facts": [],
 			"visitors": [
 				{
 					"name": "jim",
@@ -27,10 +27,10 @@
 			"alive": true,
 			"description": "default description",
 			"relation": [],
-			"publicFacts": ["k's brother, ..."].
+			"publicFacts": ["k's brother, ..."],
 			"privateFacts": [],
-			"power": [],
-			"clue": [12345]
+			"powers": [],
+			"clues": [12345]
 		}
 	],
 	"npcs": [
@@ -45,7 +45,7 @@
 				{
 					"id": 12345,
 					"description": "dead around 7:00",
-					"accessControl": ["min"]
+					"accessControl": [10000]
 				},
 				{
 					"id": 12346,

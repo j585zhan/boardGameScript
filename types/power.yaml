@@ -1,0 +1,14 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Power
+    description: power
+    type: object
+    properties:
+        id:
+            description: id of a power
+            type: integer
+        description:
+            description: description of a power
+            type: string
+    required:
+        - id
+        - description
