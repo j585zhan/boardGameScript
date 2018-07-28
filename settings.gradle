@@ -1,3 +1,4 @@
-rootProject.name = 'mysteryMurder'
+rootProject.name = 'boardGameScript'
+
 include 'mystery'
 
