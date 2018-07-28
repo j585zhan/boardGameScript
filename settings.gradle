@@ -1,0 +1,4 @@
+rootProject.name = 'mysteryMurder'
+include 'schema'
+include 'service'
+

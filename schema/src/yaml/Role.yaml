@@ -19,17 +19,17 @@
             description: relation with other people
             type: array
             items:
-                "$ref": relation.yaml
+                "$ref": Relation.yaml
         publicFacts:
             description: publicFacts of a person
             type: array
             items:
-                "$ref": fact.yaml
+                "$ref": Fact.yaml
         privateFacts:
             description: privateFacts of a person
             type: array
             items:
-                "$ref": fact.yaml
+                "$ref": Fact.yaml
     required:
         - id
         - name

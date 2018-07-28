@@ -2,20 +2,20 @@
     title: Player
     description: player
     type: object
-    extend:
+    extends:
         "$ref": Role.yaml
     properties:
         nameMapper:
-            nameMapper: map a name in script to name of actual player
+            description: map a name in script to name of actual player
             type: string
         powers:
-            powers: the available operation of current player
+            description: the available operation of current player
             type: array
             items:
                 type:
                     "$ref": Power.yaml
         clues:
-            clues: the clues of current player collected
+            description: the clues of current player collected
             type: array
             items:
                 type: integer
