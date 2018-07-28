@@ -1,0 +1,20 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Fact
+    description: fact
+    type: object
+    properties:
+        id:
+            description: id of a fact
+            type: integer
+        description:
+            description: description of a fact
+            type: string
+        accessControl:
+            description: included all players who have the access to this fact
+            type: array
+            items:
+                type: integer
+    required:
+        - id
+        - description
+        - accessControl

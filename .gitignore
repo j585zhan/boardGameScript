@@ -5,7 +5,7 @@
 *.ear
 
 .gradle
-/build/
+build/
 out
 
 .idea/

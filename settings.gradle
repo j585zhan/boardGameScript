@@ -1,4 +1,5 @@
 rootProject.name = 'boardGameScript'
 
+include 'schema'
 include 'mystery'
 
