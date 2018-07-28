@@ -5,7 +5,6 @@
 *.ear
 
 .gradle
-gradle/wrapper
 /build/
 out
 
