@@ -1,0 +1,6 @@
+language: java
+script: gradle check
+cache:
+    directories:
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
