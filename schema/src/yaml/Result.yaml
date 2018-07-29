@@ -1,0 +1,17 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Result
+    description: result
+    type: object
+    additionalProperties: false
+    properties:
+        openEnded:
+            description: is the story open ending
+            type: boolean
+        murder:
+            description: who is the murder
+            type: string
+        description:
+            description: the game description
+            type: string
+    requires:
+        - openEnded

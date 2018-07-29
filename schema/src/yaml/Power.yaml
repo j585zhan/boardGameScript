@@ -2,6 +2,7 @@
     title: Power
     description: power
     type: object
+    additionalProperties: false
     properties:
         id:
             description: id of a power

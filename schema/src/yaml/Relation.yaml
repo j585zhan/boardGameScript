@@ -2,17 +2,17 @@
     title: Relation
     description: relation
     type: object
+    additionalProperties: false
     properties:
         id:
-            description: id of a relation
+            description: target person of a relation
             type: integer
         target:
             description: target person of this relation
-            type: integer
+            type: string
         description:
             description: description of this relation
             type: string
     required:
-        - id
         - target
         - description

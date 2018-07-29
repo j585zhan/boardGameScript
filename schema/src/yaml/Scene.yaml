@@ -1,0 +1,27 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Scene
+    description: scene
+    type: object
+    additionalProperties: false
+    properties:
+        name:
+            description: name of current scene
+            type: string
+        cost:
+            description: number of points to open this scene and get clues
+            type: integer
+        facts:
+            description: available facts in current scene
+            type: array
+            items:
+                "$ref": Fact.yaml
+        visitors:
+            description: the visitors who searched this room
+            type: array
+            items:
+                type: string
+    required:
+        - cost
+        - name
+        - facts
+        - visitors

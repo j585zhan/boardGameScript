@@ -2,6 +2,7 @@
     title: Role
     description: role
     type: object
+    additionalProperties: false
     properties:
         id:
             description: id of a person
@@ -22,16 +23,14 @@
                 "$ref": Relation.yaml
         publicFacts:
             description: publicFacts of a person
-            type: array
             items:
-                "$ref": Fact.yaml
+                type: string
         privateFacts:
             description: privateFacts of a person
             type: array
             items:
                 "$ref": Fact.yaml
     required:
-        - id
         - name
         - alive
         - relation

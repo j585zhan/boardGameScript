@@ -1,0 +1,18 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Setting
+    description: setting
+    type: object
+    additionalProperties: false
+    properties:
+        player:
+            description: number of players
+            type: integer
+        time:
+            description: number of time unit
+            type: integer
+        timeUnit:
+            description: time unit
+            type: string
+        result:
+            description: the result of game
+            "$ref": Result.yaml

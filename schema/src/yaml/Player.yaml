@@ -2,23 +2,32 @@
     title: Player
     description: player
     type: object
+    additionalProperties: false
     extends:
         "$ref": Role.yaml
     properties:
         nameMapper:
             description: map a name in script to name of actual player
             type: string
+        points:
+            description: number of points available to open scene and find clues
+            type: integer
         powers:
             description: the available operation of current player
             type: array
             items:
-                type:
-                    "$ref": Power.yaml
+                "$ref": Power.yaml
         clues:
             description: the clues of current player collected
             type: array
             items:
                 type: integer
+        mission:
+            type: array
+            items:
+                type: string
     required:
+        - points
         - powers
         - clues
+        - mission

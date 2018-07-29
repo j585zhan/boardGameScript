@@ -1,0 +1,29 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Script
+    description: script
+    type: object
+    additionalProperties: false
+    properties:
+        setting:
+            description: game setting
+            "$ref": Setting.yaml
+        scenes:
+            description: list of available scene
+            type: array
+            items:
+                "$ref": Scene.yaml
+        players:
+            description: list of available human player
+            type: array
+            items:
+                "$ref": Player.yaml
+        npcs:
+            description: list of non player characters
+            type: array
+            items:
+                "$ref": Role.yaml
+    requires:
+        - setting
+        - scenes
+        - players
+        - npcs

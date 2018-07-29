@@ -6,7 +6,7 @@
 		"openEnded": false,
 		"murder": "min"
 	},
-	"scene": {
+	"scenes": [
 		{
 			"id": 111,
 			"name": "masterRoom",
@@ -18,7 +18,7 @@
 				}
 			]
 		}
-	},
+	],
 	"players": [
 		{
 			"id": 10000,
