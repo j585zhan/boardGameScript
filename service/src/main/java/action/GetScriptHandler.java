@@ -1,10 +1,10 @@
 package action;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.RoutingContext;
+import response.Response;
+import response.ResponseGenerator;
 import store.DataStore;
+import types.GetScriptRequest;
+import types.GetScriptResponse;
 import types.Script;
 
 /**
@@ -12,20 +12,30 @@ import types.Script;
  *  Note: This is only a example handler. Need to find an easier way to implement.
  *  Maybe use the WebHandler to solve request later.
  */
-public class GetScriptHandler implements ActionHandler {
+public class GetScriptHandler implements ActionHandler<GetScriptRequest, GetScriptResponse> {
 
     private Script script = DataStore.dataStore.getScript();
 
     @Override
-    public void handle(RoutingContext req) {
-        ObjectMapper mapper = new ObjectMapper();
-        String resp = "";
-        try {
-            resp = mapper.writeValueAsString(script);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        JsonObject json = new JsonObject(resp);
-        req.response().setStatusCode(200).end(json.encode());
+    public Class<GetScriptRequest> getRequestType() {
+        return GetScriptRequest.class;
+    }
+
+    @Override
+    public Class<GetScriptResponse> getResponseType() {
+        return GetScriptResponse.class;
+    }
+
+    @Override
+    public Response<GetScriptResponse> handle(GetScriptRequest req) {
+        System.out.println(req);
+
+        GetScriptResponse resp = new GetScriptResponse()
+            .withNpcs(script.getNpcs())
+            .withPlayers(script.getPlayers())
+            .withScenes(script.getScenes())
+            .withSetting(script.getSetting());
+
+        return ResponseGenerator.ok(resp);
     }
 }

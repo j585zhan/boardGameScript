@@ -1,6 +1,9 @@
+package vertx;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
+import web.RouteBuilder;
 
 public class ServiceVerticle extends AbstractVerticle {
 
@@ -17,9 +20,9 @@ public class ServiceVerticle extends AbstractVerticle {
 
         server.listen(PORT, HOST, res -> {
             if (res.succeeded()) {
-                System.out.println("Listening on " + HOST + ":" + PORT); // TODO: replaced by log
+                System.out.println("Listening on " + HOST + ":" + PORT); // TODO: replaced by log #5
             } else {
-                System.out.println("Fail to Listening on " + HOST + ":" + PORT);
+                System.out.println("Fail to Listening on " + HOST + ":" + PORT); // TODO #5
             }
         });
     }

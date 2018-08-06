@@ -1,0 +1,9 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: GetScriptRequest
+    description: get script request
+    type: object
+    additionalProperties: false
+    properties:
+        id:
+            description: id of a fact
+            type: integer

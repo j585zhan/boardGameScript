@@ -1,3 +1,5 @@
+package vertx;
+
 import io.vertx.core.Vertx;
 
 public class MainService {
@@ -9,9 +11,9 @@ public class MainService {
 
         vertx.deployVerticle(serviceVerticle, res -> {
             if (res.succeeded()) {
-                System.out.println("Deployment id is " + res.result());
+                System.out.println("Deployment id is " + res.result()); // TODO: #5
             } else {
-                System.out.println("Fail: " + res.cause().getMessage());
+                System.out.println("Fail: " + res.cause().getMessage()); // TODO: #5
             }
         });
     }
