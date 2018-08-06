@@ -1,29 +1,18 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import org.apache.commons.io.IOUtils;
-import types.Script;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import io.vertx.core.Vertx;
 
 public class MainService {
-    public static void main(String[] args) throws IOException {
-        InputStream is = new FileInputStream("script.json");
-        String jsonTxt = IOUtils.toString(is, "UTF-8");
-        JsonObject json = (JsonObject) new JsonParser().parse(jsonTxt);
+    public static void main(String[] args) {
 
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        Gson gson = gsonBuilder.create();
+        Vertx vertx = Vertx.vertx();
 
-        Script script = gson.fromJson(json, Script.class);
-        for (String s: script.getPlayers().get(0).getMission()) {
-            System.out.println(s);
-        }
+        ServiceVerticle serviceVerticle = new ServiceVerticle();
 
-        System.out.println(script.getNpcs().get(0).getDescription());
-
+        vertx.deployVerticle(serviceVerticle, res -> {
+            if (res.succeeded()) {
+                System.out.println("Deployment id is " + res.result());
+            } else {
+                System.out.println("Fail: " + res.cause().getMessage());
+            }
+        });
     }
 }
