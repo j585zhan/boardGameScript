@@ -1,7 +1,11 @@
 package action;
 
-import io.vertx.ext.web.RoutingContext;
+import response.Response;
 
-public interface ActionHandler {
-    void handle(RoutingContext req);
+public interface ActionHandler <RequestT, ResponseT> {
+    Class<RequestT> getRequestType();
+
+    Class<ResponseT> getResponseType();
+
+    Response<ResponseT> handle(RequestT req);
 }

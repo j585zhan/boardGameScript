@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 /**
- *  Temporarily DataStore. Need to be replaced by a real database
+ *  Temporarily DataStore. Need to be replaced by a real database. TODO: #2
  */
 public class DataStore {
     private Script script;

@@ -36,11 +36,13 @@ jsonSchema2Pojo {
 
   // Location of the JSON Schema file(s). This may refer to a single file or a directory of files.
   source = files([
-          "${project.projectDir}/src/yaml/Result.yaml",
-          "${project.projectDir}/src/yaml/Setting.yaml",
-          "${project.projectDir}/src/yaml/Fact.yaml",
-          "${project.projectDir}/src/yaml/Role.yaml",
-          "${project.projectDir}/src/yaml/"
+          "${project.projectDir}/src/yaml/types/Result.yaml",
+          "${project.projectDir}/src/yaml/types/Setting.yaml",
+          "${project.projectDir}/src/yaml/types/Fact.yaml",
+          "${project.projectDir}/src/yaml/types/Role.yaml",
+          "${project.projectDir}/src/yaml/types/",
+          "${project.projectDir}/src/yaml/requests/",
+          "${project.projectDir}/src/yaml/responses/"
   ])
 
   // Target directory for generated Java source files. The plugin will add this directory to the

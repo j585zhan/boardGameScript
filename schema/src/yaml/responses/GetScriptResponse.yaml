@@ -1,0 +1,29 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: GetScriptResponse
+    description: get script response
+    type: object
+    additionalProperties: false
+    properties:
+        setting:
+            description: game setting
+            "$ref": ../types/Setting.yaml
+        scenes:
+            description: list of available scene
+            type: array
+            items:
+                "$ref": ../types/Scene.yaml
+        players:
+            description: list of available human player
+            type: array
+            items:
+                "$ref": ../types/Player.yaml
+        npcs:
+            description: list of non player characters
+            type: array
+            items:
+                "$ref": ../types/Role.yaml
+    requires:
+        - setting
+        - scenes
+        - players
+        - npcs
