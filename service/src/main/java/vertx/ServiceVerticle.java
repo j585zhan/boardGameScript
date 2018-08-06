@@ -18,7 +18,16 @@ public class ServiceVerticle extends AbstractVerticle {
 
         server = vertx.createHttpServer().requestHandler(router::accept);
 
-        server.listen(PORT, HOST, res -> {
+        String prop = System.getenv("PORT");
+        int port = PORT;
+        String host = HOST;
+
+        if (prop != null) {
+            port = Integer.valueOf(prop);
+            host = "0.0.0.0";
+        }
+
+        server.listen(port, host, res -> {
             if (res.succeeded()) {
                 System.out.println("Listening on " + HOST + ":" + PORT); // TODO: replaced by log #5
             } else {
