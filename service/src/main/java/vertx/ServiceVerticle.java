@@ -3,8 +3,10 @@ package vertx;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
+import lombok.extern.slf4j.Slf4j;
 import web.RouteBuilder;
 
+@Slf4j
 public class ServiceVerticle extends AbstractVerticle {
 
     public static final String HOST = "localhost";
@@ -29,9 +31,9 @@ public class ServiceVerticle extends AbstractVerticle {
 
         server.listen(port, host, res -> {
             if (res.succeeded()) {
-                System.out.println("Listening on " + HOST + ":" + PORT); // TODO: replaced by log #5
+                log.info("Listening on {}:{}", HOST, PORT);
             } else {
-                System.out.println("Fail to Listening on " + HOST + ":" + PORT); // TODO #5
+                log.error("Fail to Listening on {}:{}", HOST, PORT);
             }
         });
     }
