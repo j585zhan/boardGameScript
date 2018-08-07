@@ -1,7 +1,9 @@
 package vertx;
 
 import io.vertx.core.Vertx;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class MainService {
     public static void main(String[] args) {
 
@@ -11,9 +13,9 @@ public class MainService {
 
         vertx.deployVerticle(serviceVerticle, res -> {
             if (res.succeeded()) {
-                System.out.println("Deployment id is " + res.result()); // TODO: #5
+                log.info("SUCCEED: Deployment id is {}", res.result());
             } else {
-                System.out.println("Fail: " + res.cause().getMessage()); // TODO: #5
+                log.error("FAIL to deploy: {}", res.cause().getMessage());
             }
         });
     }
