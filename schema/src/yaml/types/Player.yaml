@@ -12,6 +12,9 @@
         points:
             description: number of points available to open scene and find clues
             type: integer
+        action:
+            description: described how the person should behave tonight
+            type: string
         powers:
             description: the available operation of current player
             type: array
@@ -26,8 +29,14 @@
             type: array
             items:
                 type: string
+        belongings:
+            type: array
+            items:
+                type: string
     required:
         - points
         - powers
         - clues
         - mission
+        - belongings
+        - action
