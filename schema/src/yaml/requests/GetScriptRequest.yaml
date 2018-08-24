@@ -6,4 +6,4 @@
     properties:
         id:
             description: id of a fact
-            type: integer
+            type: string

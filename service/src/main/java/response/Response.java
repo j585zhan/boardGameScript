@@ -8,17 +8,17 @@ public class Response<T> {
     private String statusText = "";
     private T data;
 
-    public Response<T> withData(T data) {
+    public Response<T> withData(final T data) {
         this.data = data;
         return this;
     }
 
-    public Response<T> withStatusCode(int statusCode) {
+    public Response<T> withStatusCode(final int statusCode) {
         this.statusCode = statusCode;
         return this;
     }
 
-    public Response<T> withStatusText(String statusText) {
+    public Response<T> withStatusText(final String statusText) {
         this.statusText = statusText;
         return this;
     }

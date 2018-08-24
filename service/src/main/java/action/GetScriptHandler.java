@@ -7,14 +7,14 @@ import types.GetScriptRequest;
 import types.GetScriptResponse;
 import types.Script;
 
+import java.util.function.Consumer;
+
 /**
  *  Get Game Script
- *  Note: This is only a example handler. Need to find an easier way to implement.
- *  Maybe use the WebHandler to solve request later.
+ *
  */
 public class GetScriptHandler implements ActionHandler<GetScriptRequest, GetScriptResponse> {
-
-    private Script script = DataStore.dataStore.getScript();
+    final DataStore dataStore = DataStore.dataStore;
 
     @Override
     public Class<GetScriptRequest> getRequestType() {
@@ -27,15 +27,19 @@ public class GetScriptHandler implements ActionHandler<GetScriptRequest, GetScri
     }
 
     @Override
-    public Response<GetScriptResponse> handle(GetScriptRequest req) {
-        System.out.println(req);
+    public void handle(final GetScriptRequest req, Consumer<Response<GetScriptResponse>>toResponse) {
+        final String id = req.getId();
 
-        GetScriptResponse resp = new GetScriptResponse()
+        dataStore.getScript(id, script -> toScriptResponse(script, toResponse));
+    }
+
+    private void toScriptResponse(final Script script, Consumer<Response<GetScriptResponse>>toResponse) {
+        final GetScriptResponse resp = new GetScriptResponse()
             .withNpcs(script.getNpcs())
             .withPlayers(script.getPlayers())
             .withScenes(script.getScenes())
             .withSetting(script.getSetting());
 
-        return ResponseGenerator.ok(resp);
+        toResponse.accept(ResponseGenerator.ok(resp));
     }
 }

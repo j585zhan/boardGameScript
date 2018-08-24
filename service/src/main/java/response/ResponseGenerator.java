@@ -3,7 +3,7 @@ package response;
 import javax.ws.rs.core.Response.Status;
 
 public final class ResponseGenerator {
-    public static <T> Response<T> ok(T data) {
+    public static <T> Response<T> ok(final T data) {
         return new Response<T>().withData(data).withStatusCode(Status.OK.getStatusCode());
     }
 

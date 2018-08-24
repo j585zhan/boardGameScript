@@ -7,9 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 public class MainService {
     public static void main(String[] args) {
 
-        Vertx vertx = Vertx.vertx();
+        final Vertx vertx = Vertx.vertx();
 
-        ServiceVerticle serviceVerticle = new ServiceVerticle();
+        final ServiceVerticle serviceVerticle = new ServiceVerticle();
 
         vertx.deployVerticle(serviceVerticle, res -> {
             if (res.succeeded()) {
