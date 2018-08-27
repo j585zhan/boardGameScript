@@ -1,0 +1,11 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: AddGuestResponse
+    description: add guest response
+    type: object
+    additionalProperties: false
+    properties:
+        guests:
+            description: array of guests
+            type: array
+            items:
+                type: string

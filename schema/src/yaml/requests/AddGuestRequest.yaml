@@ -1,0 +1,12 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: AddGuestRequest
+    description: add guest request
+    type: object
+    additionalProperties: false
+    properties:
+        roomId:
+            description: id of room
+            type: string
+        name:
+            description: name of new guest
+            type: string

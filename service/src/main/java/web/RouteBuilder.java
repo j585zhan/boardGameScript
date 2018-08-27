@@ -1,14 +1,16 @@
 package web;
 
 import action.ActionHandler;
+import action.AddGuestHandler;
+import action.CreateRoomHandler;
 import action.GetScriptHandler;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.ext.web.Router;
-import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
 import lombok.Getter;
 
@@ -24,6 +26,8 @@ public class RouteBuilder {
         router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
         Route("/get", new GetScriptHandler());
+        Route("/createroom", new CreateRoomHandler());
+        Route("/addguest", new AddGuestHandler());
 
         router.route().handler(GetCORSHandler());
     }

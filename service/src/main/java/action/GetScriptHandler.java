@@ -2,7 +2,6 @@ package action;
 
 import response.Response;
 import response.ResponseGenerator;
-import store.DataStore;
 import types.GetScriptRequest;
 import types.GetScriptResponse;
 import types.Script;
@@ -14,7 +13,6 @@ import java.util.function.Consumer;
  *
  */
 public class GetScriptHandler implements ActionHandler<GetScriptRequest, GetScriptResponse> {
-    final DataStore dataStore = DataStore.dataStore;
 
     @Override
     public Class<GetScriptRequest> getRequestType() {

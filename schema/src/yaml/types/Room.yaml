@@ -1,0 +1,21 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: Room
+    description: room
+    type: object
+    additionalProperties: false
+    properties:
+        id:
+            description: room id
+            type: string
+        host:
+            description: room host
+            type: string
+        guests:
+            description: room guests
+            type: array
+            items:
+                type: string
+    requires:
+        - id
+        - host
+        - guests

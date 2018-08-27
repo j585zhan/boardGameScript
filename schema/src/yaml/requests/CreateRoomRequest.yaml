@@ -1,0 +1,12 @@
+    "$schema": "http://json-schema.org/draft-04/schema#"
+    title: CreateRoomRequest
+    description: create room request
+    type: object
+    additionalProperties: false
+    properties:
+        id:
+            description: id of room
+            type: string
+        host:
+            description: host of room
+            type: string
