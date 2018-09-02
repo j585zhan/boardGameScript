@@ -1,0 +1,9 @@
+Type	HandlerName	params			body
+Post	CreateRoom 	userId
+Post	AddGuest 	userId roomId
+Post	LoadScript
+Get 	GetDesciption
+Post    SelectRole	
+Post	GetSceneFact 	scriptId
+Post	GetPlayerFact	ZfactId
+
